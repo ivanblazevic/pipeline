@@ -5,6 +5,15 @@
 # sudo cp build.sh /usr/local/bin/build
 # sudo chmod +x /usr/local/bin/build
 
+if [ "$1" == "update" ]
+then
+    wget -P /tmp https://raw.githubusercontent.com/ivanblazevic/pipeline/master/build.sh
+    sudo cp /tmp/build.sh /usr/local/bin/build
+    rm /tmp/build.sh
+    echo "Build script has been updated..."
+    exit
+fi
+
 echo "Build has started..."
 
 REPO=$1 #"/var/builder_react.git"
