@@ -19,7 +19,7 @@ echo "Build has started..."
 REPO=$1 #"/var/builder_react.git"
 DOCKER_IMAGE=$2  #"builder_react:latest"
 SERVICE_NAME=$3  #"builder_react"
-SERVICE_NAME_DEV="${SERVICE_NAME}_DEV"
+SERVICE_NAME_DEV="${SERVICE_NAME}_dev"
 
 echo "Repo: ${REPO}"
 echo "Docker image: ${DOCKER_IMAGE}"
