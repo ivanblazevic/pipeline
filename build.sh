@@ -48,3 +48,7 @@ do
     echo 'Changes pushed to dev.'
   fi
 done
+
+## Cleanup old containers
+docker rm $(docker ps -q -f 'status=exited')
+docker rmi $(docker images -q -f "dangling=true")
