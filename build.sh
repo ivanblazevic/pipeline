@@ -5,7 +5,7 @@
 # sudo cp build.sh /usr/local/bin/build
 # sudo chmod +x /usr/local/bin/build
 
-if [ "$1" == "update" ]
+if [ "$1" = "update" ]
 then
     wget -P /tmp https://raw.githubusercontent.com/ivanblazevic/pipeline/master/build.sh
     sudo cp /tmp/build.sh /usr/local/bin/build
