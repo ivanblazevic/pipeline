@@ -4,7 +4,7 @@
 # wget https://raw.githubusercontent.com/ivanblazevic/pipeline/master/build.sh
 # sudo cp build.sh /usr/local/bin/build
 # sudo chmod +x /usr/local/bin/build
-VERSION=1.0.0
+VERSION=1.0.1
 
 if [ "$1" = "update" ]
 then
