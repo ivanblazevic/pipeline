@@ -45,10 +45,12 @@ do
   fi
 
   if [ "master" = "$branch" ]; then
+    echo "Removing ${SERVICE_NAME_DEV} service"
     docker service rm $SERVICE_NAME_DEV
-    git --work-tree=./path/under/root/dir/dev-site/ checkout -f $branch
+    #git --work-tree=./path/under/root/dir/dev-site/ checkout -f $branch
+    echo "Starting new ${SERVICE_NAME_DEV} service"
     docker service update $SERVICE_NAME_DEV --image localhost:5000/$DOCKER_IMAGE
-    echo 'Changes pushed to dev.'
+    echo "Changes pushed to dev."
   fi
 done
 
