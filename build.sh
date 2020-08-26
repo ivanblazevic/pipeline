@@ -4,7 +4,7 @@
 # wget https://raw.githubusercontent.com/ivanblazevic/pipeline/master/build.sh
 # sudo cp build.sh /usr/local/bin/build
 # sudo chmod +x /usr/local/bin/build
-VERSION=1.0.1
+VERSION=1.0.2
 
 if [ "$1" = "update" ]
 then
@@ -49,7 +49,8 @@ do
     docker service rm $SERVICE_NAME_DEV
     #git --work-tree=./path/under/root/dir/dev-site/ checkout -f $branch
     echo "Starting new ${SERVICE_NAME_DEV} service"
-    docker service update $SERVICE_NAME_DEV --image localhost:5000/$DOCKER_IMAGE
+    #docker service update $SERVICE_NAME_DEV --image localhost:5000/$DOCKER_IMAGE
+    docker service create --with-registry-auth --name $SERVICE_NAME_DEV --network=host localhost:5000/$DOCKER_IMAGE
     echo "Changes pushed to dev."
   fi
 done
